@@ -1,6 +1,7 @@
 /* ---------------------------- */
 /* Base
 /* ---------------------------- */
+
 html{
  font-size: 62.5%;  
 }
@@ -83,6 +84,7 @@ img{
 /* ---------------------------- */
 /* header
 /* ---------------------------- */
+
 .header{
   padding: 19px 30px;
   position: absolute;
@@ -155,20 +157,6 @@ img{
   align-items: center;
 }
 
-/* #container {
-    width: 500px;
-    height: 600px;
-    border: 1px solid #000;
-    position: relative;
-    overflow: hidden;
-} */
-/* #image {
-    width: 100px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-} */
-
 .main-copy {
   position: absolute;
   left: 120px;
@@ -199,46 +187,6 @@ img{
   padding-right: 15px;
 }
 
-
-
-/* .slick-arrow{
-  display: none !important; 
-} */
-
-/* 追加 */
-/* .fv {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-} */
-
-/* .slider {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.slider li {
-  min-width: 100%;
-}
-
-.slider img {
-  width: 100%;
-  height: auto;
-} */
-
-/* .main-copy {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 2;
-} */
-
 .floating-image {
   position: absolute;
   height:auto;
@@ -253,11 +201,6 @@ img{
 /* ---------------------------- */
 /* concept
 /* ---------------------------- */
-/* .bg-concept{
-  background-image: url(../img/works-bgi@2x.jpg);
-  background-size: cover;
-  background-position: center;
-} */
 
 .concept-lead{
   text-align: left;
@@ -308,7 +251,6 @@ img{
 .works-list-text{
   padding: 25px 20px;
 }
-
 
 /* ---------------------------- */
 /* skill
@@ -536,7 +478,7 @@ img{
     /* ---------------------------- */
     /* service_sp
     /* ---------------------------- */
-    /* .service-list{
+    .service-list{
       display: block;
       margin-bottom: 40px;
     }
@@ -546,5 +488,5 @@ img{
     }
     .service-item a{
       line-height: 250px;
-    } */
+    }
 }
