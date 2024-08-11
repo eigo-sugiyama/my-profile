@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像の浮遊 - GSAP使用</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #image {
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+    <!-- GSAPのCDNを読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="img/プロフィール用画像.png" alt="Floating Image">
+    </div>
+
+    <script>
+        const image = document.getElementById('image');
+        const container = document.getElementById('container');
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+        const imageWidth = image.clientWidth;
+        const imageHeight = image.clientHeight;
+
+        // 画像の開始位置を中央に設定
+        let posX = (containerWidth - imageWidth) / 2;
+        let posY = (containerHeight - imageHeight) / 2;
+
+        // 画像を中央に配置
+        image.style.left = posX + 'px';
+        image.style.top = posY + 'px';
+
+        function floatImage() {
+            // 新しいランダムな位置を少しずつずらして計算
+            const newPosX = posX + (Math.random() - 0.5) * 20; // ランダムに左右に少し動かす
+            const newPosY = posY + (Math.random() - 0.5) * 20; // ランダムに上下に少し動かす
+
+            gsap.to(image, {
+                x: newPosX - posX, // 移動先のX座標
+                y: newPosY - posY, // 移動先のY座標
+                duration: 3,
+                ease: "power1.inOut",
+                onComplete: function() {
+                    posX = newPosX;
+                    posY = newPosY;
+                    floatImage(); // 再度アニメーションを呼び出してループさせる
+                }
+            });
+        }
+
+        floatImage(); // アニメーションを開始
+    </script>
+</body>
+</html>

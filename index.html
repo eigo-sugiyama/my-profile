@@ -25,7 +25,7 @@
       <nav class="header-nav">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html#concept">About</a></li>
-          <li class="nav-item"><a href="index.html#service">Service</a></li>
+          <li class="nav-item"><a href="index.html#skills">Service</a></li>
           <li class="nav-item"><a href="index.html#works">Works</a></li>
           <li class="nav-item"><a href="contact-qiita/contactform.php.html">Contact</a></li>
         </ul>
@@ -55,11 +55,10 @@
             <p class="jp-copy">あなたに最適なサイトを<br class="sp-br">ご提案します</p>
             <p class="en-copy">Do my best!!</p>
           </div>
-          <div class="face-image">
-            <img src="img/顔画像_杉山英吾-復元.png" alt="顔画像" class="resized-image">
-          </div>
         </div>
       </div>
+      <!-- カルーセル上に重ねる画像 -->
+      <img class="floating-image" src="img/プロフィール用画像.png" alt="Floating Image">
     </div>
     <!-- //fv -->
 
@@ -69,8 +68,8 @@
       <h2 class="section-title">About</h2>
       <div class="section-inner">
         <p class="concept-lead">
-          “働きたくなる空間”をデザインすることで<br class="pc-br">
-          人々を幸せにする。
+          “あなたのために”を信条に<br class="pc-br">
+          ビジョンを形にするWeb制作を。
         </p>
         <div class="concept-content">
           <p class="concept-text">
@@ -197,5 +196,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- GSAPのCDNを読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+  <script>
+    // GSAPで画像を上下にフワフワ動かす
+    gsap.to('.floating-image', {
+        y: 30, // 上下に移動する距離
+        duration: 2, // アニメーションの時間
+        ease: "power1.inOut",
+        yoyo: true, // アニメーションを往復させる
+        repeat: -1 // 無限に繰り返す
+    });
+  </script>
 </body>
 </html>

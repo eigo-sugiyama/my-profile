@@ -142,9 +142,9 @@ img{
 .fv{
   height: 100vh;
   min-height: 550px;
-  position: relative
+  position: relative;
 }
-.fv img{
+.slider img{
   object-fit: cover;
   height: 100vh;
   min-height: 100%;
@@ -155,22 +155,19 @@ img{
   align-items: center;
 }
 
-.resized-image {
-  width: 200px;
-  height: auto;
-  max-height: 300px;
-  margin-right: 10px;
-}
-
-    /* 追記分 */
-    /* .resized-image {
-      width: 400px;
-      height: 200px;
-      max-width: 100%;
-      max-height: 100%;
-      width: 100%;
-      height: auto;
-  } */
+/* #container {
+    width: 500px;
+    height: 600px;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+} */
+/* #image {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
 
 .main-copy {
   position: absolute;
@@ -202,16 +199,56 @@ img{
   padding-right: 15px;
 }
 
-.face-image {
-  padding-left: 200px;
-  border-top-left-radius: 15px; /* 左上の角を丸くする */
-  border-top-right-radius: 15px; /* 右上の角を丸くする */
-  border-bottom-left-radius: 15px; /* 左下の角を丸くする */
-  border-bottom-right-radius: 15px; /* 右下の角を丸くする */
+
+
+/* .slick-arrow{
+  display: none !important; 
+} */
+
+/* 追加 */
+/* .fv {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+} */
+
+/* .slider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
-.slick-arrow{
-  display: none !important; 
+.slider li {
+  min-width: 100%;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+} */
+
+/* .main-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+} */
+
+.floating-image {
+  position: absolute;
+  height:auto;
+  top: 50%; /* 位置を上下中央に設定 */
+  left: 70%; /* 位置を左右中央に設定 */
+  transform: translate(-50%, -50%) scale(0.2);
+   /* 中央揃え＋1/2に縮小 */
+  z-index: 3; /* メインコピーの上に表示されるようにする */
+  transform-origin: center; 
+  /* 縮小時に中央を基準にする */
 }
 /* ---------------------------- */
 /* concept
@@ -510,28 +547,4 @@ img{
     .service-item a{
       line-height: 250px;
     } */
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

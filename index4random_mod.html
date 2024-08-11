@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像の移動</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #image {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="img/プロフィール用画像.png" alt="Moving Image">
+    </div>
+
+    <script>
+        const image = document.getElementById('image');
+        let posX = 0;
+        let posY = 0;
+        let speed = 2; // スピードを一定に保つための値
+        let directionX = Math.random() < 0.5 ? 1 : -1;
+        let directionY = Math.random() < 0.5 ? 1 : -1;
+
+        function changeDirection() {
+            directionX = Math.random() < 0.5 ? 1 : -1;
+            directionY = Math.random() < 0.5 ? 1 : -1;
+        }
+
+        function moveImage() {
+            const container = document.getElementById('container');
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const imageWidth = image.clientWidth;
+            const imageHeight = image.clientHeight;
+
+            posX += directionX * speed;
+            posY += directionY * speed;
+
+            if (posX + imageWidth > containerWidth || posX < 0) {
+                directionX *= -1;
+            }
+            if (posY + imageHeight > containerHeight || posY < 0) {
+                directionY *= -1;
+            }
+
+            image.style.left = posX + 'px';
+            image.style.top = posY + 'px';
+
+            requestAnimationFrame(moveImage);
+        }
+
+        // ランダムに方向を変更する間隔（1000ms = 1秒）
+        setInterval(changeDirection, 1000);
+
+        moveImage();
+    </script>
+</body>
+</html>
