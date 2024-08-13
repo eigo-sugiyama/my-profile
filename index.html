@@ -136,6 +136,16 @@
   <script src="js/skills.js"></script>
   <!-- GSAPのCDNを読み込み -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
-  <script src="js/float_image.js"></script>
+  <!-- <script src="js/float_image.js"></script> -->
+  <script>
+    // GSAPで画像を上下にフワフワ動かす
+    gsap.to('.floating-image', {
+          y: 30, // 上下に移動する距離
+          duration: 2, // アニメーションの時間
+          ease: "power1.inOut",
+          yoyo: true, // アニメーションを往復させる
+          repeat: -1 // 無限に繰り返す
+      });    
+  </script>
 </body>
 </html>
