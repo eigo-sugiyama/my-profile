@@ -1,9 +1,10 @@
 
-// GSAPで画像を上下にフワフワ動かす
+window.onload = function() {
   gsap.to('.floating-image', {
-      y: 3, // 上下に移動する距離
-      duration: 2, // アニメーションの時間
+      y: 30,
+      duration: 2,
       ease: "power1.inOut",
-      yoyo: true, // アニメーションを往復させる
-      repeat: -1 // 無限に繰り返す
+      yoyo: true,
+      repeat: -1
   });
+};
