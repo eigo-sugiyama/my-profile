@@ -97,19 +97,21 @@ img{
   transition: .3s;
   
 }
-.header-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
 .header.fixed{
   position: fixed;
   background-color: #282f35;
   padding: 30px;
   width: 100%;
   transition: .3s;
+}
+
+.header-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .header a{
   color: #fff;
@@ -229,9 +231,21 @@ img{
 /* works
 /* ---------------------------- */
 .bg-works{
-  background-image: url(../img/works-bgi@2x.jpg);
+  position: relative;
+  z-index: 0; /* コンテンツの重なり順を明確にする */
+  background-image: url(../img/slick/苗.jpg);
   background-size: cover;
   background-position: center;
+}
+.bg-works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.6); /* 黒の半透明オーバーレイ */
+  z-index: -1; /* オーバーレイを背景に */
 }
 .works-list{
   max-width: 1000px;
@@ -300,7 +314,21 @@ img{
 /* contact
 /* ---------------------------- */
 .bg-contact{
-  background-image: url(../img/contact-bgi@2x.jpg);
+  position: relative;
+  z-index: 0; /* コンテンツの重なり順を明確にする */
+  background-image: url(../img/twtcrd/光のカーテン.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.bg-contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.6); /* 黒の半透明オーバーレイ */
+  z-index: -1; /* オーバーレイを背景に */
 }
 .contact-text{
   text-align: center;
@@ -457,7 +485,7 @@ img{
       margin-bottom: 30px;
     }
     .concept-img-wrapper{
-      width: 100%;
+      width: 50%;
       margin: 0;
     }
 

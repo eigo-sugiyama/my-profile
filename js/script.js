@@ -12,27 +12,15 @@
     var value = $(this).scrollTop();
       if($win.width()>768)
   
-        // if ( value > fvHeight) {
+        if ( value > fvHeight) {
           $header.addClass(fixedClass);
           
-        // } else {
-        //   $header.removeClass(fixedClass);
-          
-        // }
-      
-  
+        } else {
+          $header.removeClass(fixedClass);
+        }
+
     });
   });
-
-
-  //ファーストビューのslider
-  // $('.slider').slick({
-  //   autoplay: true,
-  //   autoplaySpeed: 2000,
-  //   speed: 1000,
-  //   fade: true,
-  //   cssEase: 'linear'
-  // });
 
   $(document).ready(function(){
     // Slick Sliderの初期化
@@ -50,7 +38,6 @@
     });
   });
 
-  
   //ハンバーガーメニューの開閉
   $('.burger-btn').on('click',function(){
     $('.header-nav').fadeToggle(300);
